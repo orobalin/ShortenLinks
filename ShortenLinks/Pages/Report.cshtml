@@ -1,0 +1,42 @@
+﻿@page
+@model ShortenLinks.Pages.ReportModel
+@{
+    ViewData["Title"] = "Reportes";
+}
+<br /><br />
+<h3>Reportes</h3>
+<br /><br />
+<form id="ReportForm" method="POST" name="ReportForm">
+    <div class="row rowheader">
+        <div class="col-md-4"><h4>Enlace Original</h4></div>
+        <div class="col-md-4"><h4>Enlace Reducido</h4></div>
+        <div class="col-md-2"><h4>Fecha Creación</h4></div>
+        <div class="col-md-2"><h4>Cantidad Accesos</h4></div>
+    </div>
+    @foreach (var link in Model.ShortenLinks)
+    {
+    <div class="row">
+        <div class="col-md-4">@link.LongLink</div>
+        <div class="col-md-4"><a asp-page="./SL" asp-route-id="@link.Id">@link.ShortLink</a></div>
+        <div class="col-md-2">@link.DateCreated</div>
+        <div class="col-md-2 text-center">@link.AccessCount.ToString()</div>
+    </div>
+    }
+    <br /><hr /><br />
+    <div class="row rowheader">
+        <div class="col-md-4"><h4>Enlace Original</h4></div>
+        <div class="col-md-4"><h4>Enlace Reducido</h4></div>
+        <div class="col-md-2"><h4>Origen</h4></div>
+        <div class="col-md-2"><h4>Fecha Acceso</h4></div>
+    </div>
+    @foreach (var linklog in Model.ShortenLinkLogs)
+    {
+    <div class="row">
+        <div class="col-md-4">@linklog.LongLink</div>
+        <div class="col-md-4"><a asp-page="./SL" asp-route-id="@linklog.ShortLinkId">@linklog.ShortLink</a></div>
+        <div class="col-md-2">@linklog.Origen</div>
+        <div class="col-md-2">@linklog.DateAccess</div>
+    </div>
+    }
+</form>
+

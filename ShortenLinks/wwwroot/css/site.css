@@ -35,3 +35,9 @@ body {
         display: none;
     }
 }
+
+.rowheader {
+    border: 1px solid #000000;
+    color: #ffffff; 
+    background-color: #808080;
+}
