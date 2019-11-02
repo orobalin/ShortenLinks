@@ -41,3 +41,14 @@ body {
     color: #ffffff; 
     background-color: #808080;
 }
+
+.rowchild {
+    border-right: 0.1px solid #000000;
+    border-bottom: 0.1px solid #000000;
+    border-left: 0.1px solid #000000;
+    background-color: #e6f0f3;
+}
+
+.enlacewrap {
+    word-break: break-all;
+}

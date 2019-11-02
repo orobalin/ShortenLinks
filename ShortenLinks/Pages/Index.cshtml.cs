@@ -40,7 +40,7 @@ namespace ShortenLinks.Pages
                     if (slk == null)
                     {
                         string lLink = ShortenLink.LongLink;
-                        if ((lLink.StartsWith("http://") == false) || (lLink.StartsWith("https://") == false))
+                        if ((lLink.StartsWith("http://") == false) && (lLink.StartsWith("https://") == false))
                         {
                             lLink = "http://" + lLink;
                         }
